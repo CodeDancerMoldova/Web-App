@@ -14,7 +14,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import javax.transaction.Transactional;
 import java.nio.charset.StandardCharsets;
 
 import static com.example.demo.repositories.TestRepositoryUtils.ALEX_ID_5;
@@ -33,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @TestPropertySource(locations = "classpath:application-test.properties")
 @AutoConfigureMockMvc
-@Transactional
+
 public class EmployeeRestControllerIntegrationTest {
 
     @Autowired
@@ -47,7 +46,6 @@ public class EmployeeRestControllerIntegrationTest {
 
     @Autowired
     private EmployeeRepository employeeRepository;
-
 
     @Test
     void testRegisterWorksThroughAllLayers() throws Exception {
